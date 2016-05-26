@@ -4,13 +4,9 @@ public class Teacher {
 	
 	private String name;
 	private long teacherId;
+	private double averageScore;
 	
 	public Teacher() {}
-	
-	public Teacher(String name, long teacherId) {
-		this.name = name;
-		this.teacherId = teacherId;
-	}
 	
 	public static Teacher initTeacher() {
 		
@@ -28,6 +24,8 @@ public class Teacher {
 		
 		if(Debug.TIP_ENABLE)
 			System.out.println("该老师信息已录入完毕！");
+		
+		aTeacher.averageScore = 0;
 		
 		return aTeacher;
 	}
@@ -48,13 +46,38 @@ public class Teacher {
 		this.teacherId = teacherId;
 	}
 
+	public double getAverageScore() {
+		return averageScore;
+	}
+
+	public void setAverageScore(double averageScore) {
+		this.averageScore = averageScore;
+	}
+
 	@Override
 	public String toString() {
 		return "Teacher [name=" + name + ", teacherId=" + teacherId + "]";
 	}
 	
-	@Override 
+	@Override
 	public int hashCode() {
-		return (teacherId+"").hashCode();
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + (int) (teacherId ^ (teacherId >>> 32));
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Teacher other = (Teacher) obj;
+		if (teacherId != other.teacherId)
+			return false;
+		return true;
 	}
 }

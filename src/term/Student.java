@@ -12,16 +12,6 @@ public class Student {
 	private Set<Subject> subjectSet = new HashSet<Subject>();
 	
 	public Student() {}
-	
-	public Student(long studentId, String name, String sex, int age, Date birthday, Set<Subject> subjectSet) {
-		super();
-		this.studentId = studentId;
-		this.name = name;
-		this.sex = sex;
-		this.age = age;
-		this.birthday = birthday;
-		this.subjectSet = subjectSet;
-	}
 
 	public static Student initStudent() {
 		
@@ -140,4 +130,35 @@ public class Student {
 		return -1;
 	}
 	
+	public Teacher getSubjectTeacher(String aSubjectName) {
+		for(Subject aSubject : subjectSet) {
+			String ithSubjectName = aSubject.getName();
+			if(ithSubjectName.equals(aSubjectName)) {
+				 return aSubject.getTeacher();
+			}
+		}
+		return null;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + (int) (studentId ^ (studentId >>> 32));
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Student other = (Student) obj;
+		if (studentId != other.studentId)
+			return false;
+		return true;
+	}
 }

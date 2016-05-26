@@ -112,7 +112,48 @@ public class Main {
 			subjectStudentsMap.put(classArray[i], classArray[i].findTopSubjectStudents());
 		}
 		
+		if(Debug.SHOWINFO) {
+			for(SchoolClass aSchoolClass : subjectStudentsMap.keySet()) {
+				System.out.println("班级名称: " + aSchoolClass.getName());
+				Map<Subject, Student> classTopStudent = subjectStudentsMap.get(aSchoolClass);
+				for(Subject aSubject : classTopStudent.keySet()) {	
+					System.out.println("课程名称: " + aSubject.getName());
+					Student aStudent = classTopStudent.get(aSubject);
+					System.out.println(aStudent);
+				}
+			}
+		}
+		
 		return subjectStudentsMap;
+	}
+
+//	5. 找出所有班级中，每个科目的班级平均分最高的任课老师的信息；
+	public static Map<Subject, Teacher> findSubjectBestTeacher() {
+		Map<Subject, Teacher> bestSubjectTeacher = new HashMap<Subject, Teacher>();
+		Set<Subject> totalSubjectSet = new HashSet<Subject>();
+		for(int i = 0; i < classTotalNumber; i++) 
+			totalSubjectSet.addAll(classArray[i].getSubjectSet());
+		
+		for(Subject aSubject : totalSubjectSet) {
+			Teacher bestTeacher = null;
+			for(int i = 0; i < classTotalNumber; i++) {
+				Teacher classSubjectTeacher = (classArray[i].getSubjetcTeacherMap()).get(aSubject);
+				if(bestTeacher == null || bestTeacher.getAverageScore() < classSubjectTeacher.getAverageScore()) 
+					bestTeacher = classSubjectTeacher;
+			}
+			bestSubjectTeacher.put(aSubject, bestTeacher);
+		}
+		
+		if(Debug.SHOWINFO) {
+			for(Subject aSubject : bestSubjectTeacher.keySet()) {
+				System.out.println("课程名称："+aSubject.getName());
+				Teacher aTeacher = bestSubjectTeacher.get(aSubject);
+				System.out.println(aTeacher);
+				System.out.println("课程平均分："+aTeacher.getAverageScore());
+			}
+		}
+		
+		return bestSubjectTeacher;
 	}
 	
 	public static void main(String[] args) throws IOException {
@@ -122,7 +163,6 @@ public class Main {
 		initAllClass();
 		
 		readFromConsole();
-		
 		
 		if(Debug._1ST_TEST_ENABLE) {
 			System.out.println("====================== 测试一【输入学生编号，得到学生的信息】 ======================");
@@ -137,22 +177,24 @@ public class Main {
 			System.out.println("请输入待查找的班级名称，科目名称：");
 			String aSchoolClassName = in.next();
 			String aSubejectName = in.next();
-			Set<Student> failStudentSet = findAllFailStudents(aSchoolClassName, aSubejectName);
+			findAllFailStudents(aSchoolClassName, aSubejectName);
 		}
 
 		if(Debug._3RD_TEST_ENABLE) {
 			System.out.println("==== 测试三【输入学生所在的班级，得出所有学生的信息，按照学生的出生年月、学生编号进行排序】 ====");
 			System.out.println("请输入待查找的班级名称：");
 			String aSchoolClassName = in.next();
-			Set<Student> sortedStudentSet = findAllStudent(aSchoolClassName);
+			findAllStudent(aSchoolClassName);
 		}
 		
 		if(Debug._4TH_TEST_ENABLE) {
-			
+			System.out.println("===================== 测试四【找出所有班级中，单科排名第一的学生】 =====================");
+			findTopSubjectStudents();
 		}
 		
 		if(Debug._5TH_TEST_ENABLE) {
-			
+			System.out.println("============= 测试五【找出所有班级中，每个科目的班级平均分最高的任课老师的信息】 =============");
+			findSubjectBestTeacher();
 		}
 		
 	}

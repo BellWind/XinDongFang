@@ -4,9 +4,10 @@ import java.util.*;
 
 public class SchoolClass {
 	
-	public String name;
+	private String name;
 	private Set<Student> studentSet = new HashSet<Student>();
 	private Set<Subject> subjectSet = new HashSet<Subject>();
+	private Map<Subject, Teacher> subjectTeacherMap = new HashMap<Subject, Teacher>();
 	
 	public SchoolClass() {}
 	
@@ -41,6 +42,26 @@ public class SchoolClass {
 			for(Subject aSubject : aSubjectSet) {
 				aSchoolClass.addSubject(aSubject);
 			}
+		}
+		
+		
+		for(Subject aSubject : aSchoolClass.subjectSet) {
+			String aSubjectName = aSubject.getName();
+			Teacher classSubjectTeacher = null;
+			int totalScore = 0;
+			int totalStudent = 0;
+			for(Student aStudent : aSchoolClass.studentSet) {
+				int score = aStudent.getSubjectScore(aSubjectName);
+				if(score >= 0) {
+					totalScore += score;
+					totalStudent++;
+					if(classSubjectTeacher == null) {
+						classSubjectTeacher = aStudent.getSubjectTeacher(aSubjectName);
+					}
+				}
+			}
+			classSubjectTeacher.setAverageScore((double)totalScore / (double)totalStudent);
+			aSchoolClass.subjectTeacherMap.put(aSubject, classSubjectTeacher);
 		}
 		
 		if(Debug.TIP_ENABLE)
@@ -82,7 +103,15 @@ public class SchoolClass {
 	public void setSubjectSet(Set<Subject> subjectSet) {
 		this.subjectSet = subjectSet;
 	}
-	
+
+	public Map<Subject, Teacher> getSubjetcTeacherMap() {
+		return subjectTeacherMap;
+	}
+
+	public void setSubjetcTeacherMap(Map<Subject, Teacher> subjetcTeacher) {
+		this.subjectTeacherMap = subjetcTeacher;
+	}
+
 	@Override
 	public String toString() {
 		return "SchoolClass [name=" + name + ", studentSet=" + studentSet + ", subjectSet=" + subjectSet + "]";
@@ -159,6 +188,16 @@ public class SchoolClass {
 		}
 		
 		return topSubjectStudentSet;
+	}
+	
+	public void testSubjectSet() {
+		System.out.println("班级科目集合大小："+subjectSet.size());
+		int cnt = 1;
+		for(Subject aSubject : subjectSet) {
+			System.out.println("第"+cnt+"个科目的名称为："+aSubject.getName());
+			System.out.println("其hash值为："+aSubject.hashCode());
+			cnt++;
+		}
 	}
 	
 }

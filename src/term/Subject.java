@@ -5,19 +5,11 @@ public class Subject {
 	private String name;
 	private int score;
 	private Teacher teacher;
-	private double averageScore;
 	
 	public Subject() {}
 	
 	public Subject(String name) {
 		this.name = name;
-	}
-
-	public Subject(String name, int score, Teacher teacher, double averageScore) {
-		this.name = name;
-		this.score = score;
-		this.teacher = teacher;
-		this.averageScore = averageScore;
 	}
 
 	public static Subject initSubject() {
@@ -69,14 +61,6 @@ public class Subject {
 		this.teacher = teacher;
 	}
 	
-	public double getAverageScore() {
-		return averageScore;
-	}
-
-	public void setAverageScore(double averageScore) {
-		this.averageScore = averageScore;
-	}
-	
 	@Override
 	public String toString() {
 		return "Subject [name=" + name + ", score=" + score + ", teacher=" + teacher + "]";
@@ -84,6 +68,26 @@ public class Subject {
 
 	@Override
 	public int hashCode() {
-		return (name + teacher.getTeacherId()).hashCode();
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Subject other = (Subject) obj;
+		if (name == null) {
+			if (other.name != null)
+				return false;
+		} else if (!name.equals(other.name))
+			return false;
+		return true;
 	}
 }
