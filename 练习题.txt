@@ -1,0 +1,49 @@
+﻿以下为类的基本结构，可根据需求或自己的想法进行添加或修改。
+
+class Student{
+	private int studentId;
+	private String name;
+	private String sex;
+	private int age;
+	private Date birthday;
+
+}
+
+class Teacher{
+	private int teacherId;
+	private String name;
+}
+
+class Subject{
+	String name;
+	Teacher teacher;
+}
+
+class Class{
+	private Set<Student> studentSet;
+	private Set<Subject> subjectSet;
+}
+
+
+1. 输入学生编号，得到学生的信息；
+	public Student getStudent(int studentId);
+	
+2. 输入学生所在的班级，科目，得出该科目不及格的所有学生,按照学生的科目成绩进行排序；
+
+	public Set<Student> findAllFailStudents(Class class, Subject subject);
+
+3. 输入学生所在的班级，得出所有学生的信息，按照学生的出生年月、学生编号进行排序；
+
+	public Set<Student> findAllStudent(Class class);
+
+4. 找出所有班级中，单科排名第一的学生；
+
+	public Map<Class, Map<Subject, Student>> findTopSubjectStudents();
+
+5. 找出所有班级中，每个科目的班级平均分最高的任课老师的信息；
+
+	public Map<Subject, Teacher> findSubjectBestTeacher();
+
+
+	
+以上功能可自行放在合适的类中，最后通过一个Main类进行调用完成上述功能的打印。
