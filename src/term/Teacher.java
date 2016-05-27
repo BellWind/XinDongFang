@@ -13,17 +13,17 @@ public class Teacher {
 		Teacher aTeacher = new Teacher();
 		
 		if(Debug.TIP_ENABLE)
-			System.out.println("ÇëÊäÈë¸ÃÀÏÊ¦ĞÕÃû£º");
+			System.out.println("è¯·è¾“å…¥è¯¥è€å¸ˆå§“åï¼š");
 		String aName = Main.in.next();
 		aTeacher.setName(aName);
 		
 		if(Debug.TIP_ENABLE)
-			System.out.println("ÇëÊäÈë¸ÃÀÏÊ¦¹¤ºÅ£º");
+			System.out.println("è¯·è¾“å…¥è¯¥è€å¸ˆå·¥å·ï¼š");
 		long aTeacherId = Main.in.nextLong();
 		aTeacher.setTeacherId(aTeacherId);
 		
 		if(Debug.TIP_ENABLE)
-			System.out.println("¸ÃÀÏÊ¦ĞÅÏ¢ÒÑÂ¼ÈëÍê±Ï£¡");
+			System.out.println("è¯¥è€å¸ˆä¿¡æ¯å·²å½•å…¥å®Œæ¯•ï¼");
 		
 		aTeacher.averageScore = 0;
 		

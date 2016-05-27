@@ -22,12 +22,12 @@ public class SchoolClass {
 		SchoolClass aSchoolClass = new SchoolClass();
 		
 		if(Debug.TIP_ENABLE)
-			System.out.println("ÇëÊäÈë°à¼¶Ãû³Æ£º");
+			System.out.println("è¯·è¾“å…¥ç­çº§åç§°ï¼š");
 		String aName = Main.in.next();
 		aSchoolClass.setName(aName);
 		
 		if(Debug.TIP_ENABLE)
-			System.out.println("ÇëÊäÈë°à¼¶Ñ§Éú×ÜÊıÁ¿£º");
+			System.out.println("è¯·è¾“å…¥ç­çº§å­¦ç”Ÿæ€»æ•°é‡ï¼š");
 		int classTotalStudentNumber = Main.in.nextInt();
 		
 		for(int i = 0; i < classTotalStudentNumber; i++) {
@@ -65,7 +65,7 @@ public class SchoolClass {
 		}
 		
 		if(Debug.TIP_ENABLE)
-			System.out.println("¸Ã°à¼¶ĞÅÏ¢ÒÑÂ¼ÈëÍê±Ï£¡");
+			System.out.println("è¯¥ç­çº§ä¿¡æ¯å·²å½•å…¥å®Œæ¯•ï¼");
 		
 		return aSchoolClass;
 	}
@@ -126,7 +126,7 @@ public class SchoolClass {
 			}
 		}
 		if(!findSubject) {
-			System.out.println("ÇëÊäÈë¸Ã°à¼¶´æÔÚµÄ¿Î³Ì£¡");
+			System.out.println("è¯·è¾“å…¥è¯¥ç­çº§å­˜åœ¨çš„è¯¾ç¨‹ï¼");
 			return null;
 		}
 		
@@ -191,11 +191,11 @@ public class SchoolClass {
 	}
 	
 	public void testSubjectSet() {
-		System.out.println("°à¼¶¿ÆÄ¿¼¯ºÏ´óĞ¡£º"+subjectSet.size());
+		System.out.println("ç­çº§ç§‘ç›®é›†åˆå¤§å°ï¼š"+subjectSet.size());
 		int cnt = 1;
 		for(Subject aSubject : subjectSet) {
-			System.out.println("µÚ"+cnt+"¸ö¿ÆÄ¿µÄÃû³ÆÎª£º"+aSubject.getName());
-			System.out.println("ÆähashÖµÎª£º"+aSubject.hashCode());
+			System.out.println("ç¬¬"+cnt+"ä¸ªç§‘ç›®çš„åç§°ä¸ºï¼š"+aSubject.getName());
+			System.out.println("å…¶hashå€¼ä¸ºï¼š"+aSubject.hashCode());
 			cnt++;
 		}
 	}

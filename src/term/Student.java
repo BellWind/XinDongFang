@@ -18,27 +18,27 @@ public class Student {
 		Student aStudent = new Student();
 		
 		if(Debug.TIP_ENABLE)
-			System.out.println("ÇëÊäÈë¸ÃÑ§ÉúĞÕÃû£º");
+			System.out.println("è¯·è¾“å…¥è¯¥å­¦ç”Ÿå§“åï¼š");
 		String aName = Main.in.next();
 		aStudent.setName(aName);
 		
 		if(Debug.TIP_ENABLE)
-			System.out.println("ÇëÊäÈë¸ÃÑ§ÉúĞÔ±ğ£º");
+			System.out.println("è¯·è¾“å…¥è¯¥å­¦ç”Ÿæ€§åˆ«ï¼š");
 		String aSex = Main.in.next();
 		aStudent.setSex(aSex);
 		
 		if(Debug.TIP_ENABLE)
-			System.out.println("ÇëÊäÈë¸ÃÑ§ÉúÄêÁä£º");
+			System.out.println("è¯·è¾“å…¥è¯¥å­¦ç”Ÿå¹´é¾„ï¼š");
 		int aAge = Main.in.nextInt();
 		aStudent.setAge(aAge);
 		
 		if(Debug.TIP_ENABLE)
-			System.out.println("ÇëÊäÈë¸ÃÑ§ÉúÑ§ºÅ£º");
+			System.out.println("è¯·è¾“å…¥è¯¥å­¦ç”Ÿå­¦å·ï¼š");
 		long aStudentId = Main.in.nextLong();
 		aStudent.setStudentId(aStudentId);
 		
 		if(Debug.TIP_ENABLE)
-			System.out.println("ÇëÊäÈë¸ÃÑ§Éú³öÉúÄêÔÂÈÕ£¬²¢ÓÃ¿Õ¸ñ¸ô¿ª£º");
+			System.out.println("è¯·è¾“å…¥è¯¥å­¦ç”Ÿå‡ºç”Ÿå¹´æœˆæ—¥ï¼Œå¹¶ç”¨ç©ºæ ¼éš”å¼€ï¼š");
 		int bornYear = Main.in.nextInt();
 		int bornMonth = Main.in.nextInt();
 		int bornDay = Main.in.nextInt();
@@ -46,7 +46,7 @@ public class Student {
 		aStudent.setBirthday(aBirthday);
 		
 		if(Debug.TIP_ENABLE)
-			System.out.println("ÇëÊäÈë¸ÃÑ§Éú×Ü¿ÆÄ¿ÊıÁ¿£º");
+			System.out.println("è¯·è¾“å…¥è¯¥å­¦ç”Ÿæ€»ç§‘ç›®æ•°é‡ï¼š");
 		int subjectTotalNumber = Main.in.nextInt();
 		for(int i = 0; i < subjectTotalNumber; i++) {
 			if(Debug.TIP_ENABLE)
@@ -56,7 +56,7 @@ public class Student {
 		}
 		
 		if(Debug.TIP_ENABLE)
-			System.out.println("¸ÃÑ§ÉúĞÅÏ¢ÒÑÂ¼ÈëÍê±Ï£¡");
+			System.out.println("è¯¥å­¦ç”Ÿä¿¡æ¯å·²å½•å…¥å®Œæ¯•ï¼");
 		
 		return aStudent;
 	}

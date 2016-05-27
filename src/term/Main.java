@@ -31,7 +31,7 @@ public class Main {
 		
 	public static void initAllClass() throws IOException {
 		if(Debug.TIP_ENABLE)
-			System.out.println("ÇëÊäÈë°à¼¶×ÜÊıÁ¿£º");
+			System.out.println("è¯·è¾“å…¥ç­çº§æ€»æ•°é‡ï¼š");
 		classTotalNumber = in.nextInt();
 		
 		for(int i = 0; i < classTotalNumber; i++) {
@@ -41,7 +41,7 @@ public class Main {
 		}
 	}
 	
-//	1. ÊäÈëÑ§Éú±àºÅ£¬µÃµ½Ñ§ÉúµÄĞÅÏ¢£»
+//	1. è¾“å…¥å­¦ç”Ÿç¼–å·ï¼Œå¾—åˆ°å­¦ç”Ÿçš„ä¿¡æ¯ï¼›
 	public static Student getStudent(long studentId) {
 		for(int i = 0; i < classTotalNumber; i++) {
 			Set<Student> aStudentSet = classArray[i].getStudentSet();
@@ -53,7 +53,7 @@ public class Main {
 				}			
 			}
 		}
-		System.out.println("ÇëÊäÈëºÏ·¨´æÔÚµÄÑ§ºÅ£¡");
+		System.out.println("è¯·è¾“å…¥åˆæ³•å­˜åœ¨çš„å­¦å·ï¼");
 		return null;
 	}
 	
@@ -67,11 +67,11 @@ public class Main {
 			}
 		}
 		if(!findClass)
-			System.out.println("ÇëÊäÈëºÏ·¨´æÔÚµÄ°à¼¶Ãû³Æ£¡");
+			System.out.println("è¯·è¾“å…¥åˆæ³•å­˜åœ¨çš„ç­çº§åç§°ï¼");
 		return null;
 	}
 	
-//	2. ÊäÈëÑ§ÉúËùÔÚµÄ°à¼¶£¬¿ÆÄ¿£¬µÃ³ö¸Ã¿ÆÄ¿²»¼°¸ñµÄËùÓĞÑ§Éú£¬°´ÕÕÑ§ÉúµÄ¿ÆÄ¿³É¼¨½øĞĞÅÅĞò£»
+//	2. è¾“å…¥å­¦ç”Ÿæ‰€åœ¨çš„ç­çº§ï¼Œç§‘ç›®ï¼Œå¾—å‡ºè¯¥ç§‘ç›®ä¸åŠæ ¼çš„æ‰€æœ‰å­¦ç”Ÿï¼ŒæŒ‰ç…§å­¦ç”Ÿçš„ç§‘ç›®æˆç»©è¿›è¡Œæ’åºï¼›
 	public static Set<Student> findAllFailStudents(String aClassName, String aSubject) {
 		SchoolClass aSchoolClass = findScoolClass(aClassName);
 		if(aSchoolClass == null)
@@ -87,7 +87,7 @@ public class Main {
 		return failStudentSet;
 	}
 	
-//	3. ÊäÈëÑ§ÉúËùÔÚµÄ°à¼¶£¬µÃ³öËùÓĞÑ§ÉúµÄĞÅÏ¢£¬°´ÕÕÑ§ÉúµÄ³öÉúÄêÔÂ¡¢Ñ§Éú±àºÅ½øĞĞÅÅĞò£»
+//	3. è¾“å…¥å­¦ç”Ÿæ‰€åœ¨çš„ç­çº§ï¼Œå¾—å‡ºæ‰€æœ‰å­¦ç”Ÿçš„ä¿¡æ¯ï¼ŒæŒ‰ç…§å­¦ç”Ÿçš„å‡ºç”Ÿå¹´æœˆã€å­¦ç”Ÿç¼–å·è¿›è¡Œæ’åºï¼›
 	public static Set<Student> findAllStudent(String aClassName) {
 		SchoolClass aSchoolClass = findScoolClass(aClassName);
 		if(aSchoolClass == null)
@@ -104,7 +104,7 @@ public class Main {
 		return sortedStudentSet;
 	}
 	
-//	4. ÕÒ³öËùÓĞ°à¼¶ÖĞ£¬µ¥¿ÆÅÅÃûµÚÒ»µÄÑ§Éú£»
+//	4. æ‰¾å‡ºæ‰€æœ‰ç­çº§ä¸­ï¼Œå•ç§‘æ’åç¬¬ä¸€çš„å­¦ç”Ÿï¼›
 	public static Map<SchoolClass, Map<Subject, Student>> findTopSubjectStudents() {
 		Map<SchoolClass, Map<Subject, Student>> subjectStudentsMap = new HashMap<SchoolClass, Map<Subject, Student>>();
 		
@@ -114,10 +114,10 @@ public class Main {
 		
 		if(Debug.SHOWINFO) {
 			for(SchoolClass aSchoolClass : subjectStudentsMap.keySet()) {
-				System.out.println("°à¼¶Ãû³Æ: " + aSchoolClass.getName());
+				System.out.println("ç­çº§åç§°: " + aSchoolClass.getName());
 				Map<Subject, Student> classTopStudent = subjectStudentsMap.get(aSchoolClass);
 				for(Subject aSubject : classTopStudent.keySet()) {	
-					System.out.println("¿Î³ÌÃû³Æ: " + aSubject.getName());
+					System.out.println("è¯¾ç¨‹åç§°: " + aSubject.getName());
 					Student aStudent = classTopStudent.get(aSubject);
 					System.out.println(aStudent);
 				}
@@ -127,7 +127,7 @@ public class Main {
 		return subjectStudentsMap;
 	}
 
-//	5. ÕÒ³öËùÓĞ°à¼¶ÖĞ£¬Ã¿¸ö¿ÆÄ¿µÄ°à¼¶Æ½¾ù·Ö×î¸ßµÄÈÎ¿ÎÀÏÊ¦µÄĞÅÏ¢£»
+//	5. æ‰¾å‡ºæ‰€æœ‰ç­çº§ä¸­ï¼Œæ¯ä¸ªç§‘ç›®çš„ç­çº§å¹³å‡åˆ†æœ€é«˜çš„ä»»è¯¾è€å¸ˆçš„ä¿¡æ¯ï¼›
 	public static Map<Subject, Teacher> findSubjectBestTeacher() {
 		Map<Subject, Teacher> bestSubjectTeacher = new HashMap<Subject, Teacher>();
 		Set<Subject> totalSubjectSet = new HashSet<Subject>();
@@ -146,10 +146,10 @@ public class Main {
 		
 		if(Debug.SHOWINFO) {
 			for(Subject aSubject : bestSubjectTeacher.keySet()) {
-				System.out.println("¿Î³ÌÃû³Æ£º"+aSubject.getName());
+				System.out.println("è¯¾ç¨‹åç§°ï¼š"+aSubject.getName());
 				Teacher aTeacher = bestSubjectTeacher.get(aSubject);
 				System.out.println(aTeacher);
-				System.out.println("¿Î³ÌÆ½¾ù·Ö£º"+aTeacher.getAverageScore());
+				System.out.println("è¯¾ç¨‹å¹³å‡åˆ†ï¼š"+aTeacher.getAverageScore());
 			}
 		}
 		
@@ -165,35 +165,35 @@ public class Main {
 		readFromConsole();
 		
 		if(Debug._1ST_TEST_ENABLE) {
-			System.out.println("====================== ²âÊÔÒ»¡¾ÊäÈëÑ§Éú±àºÅ£¬µÃµ½Ñ§ÉúµÄĞÅÏ¢¡¿ ======================");
-			System.out.println("ÇëÊäÈë´ı²éÕÒÑ§Éú±àºÅ£º");
+			System.out.println("====================== æµ‹è¯•ä¸€ã€è¾“å…¥å­¦ç”Ÿç¼–å·ï¼Œå¾—åˆ°å­¦ç”Ÿçš„ä¿¡æ¯ã€‘ ======================");
+			System.out.println("è¯·è¾“å…¥å¾…æŸ¥æ‰¾å­¦ç”Ÿç¼–å·ï¼š");
 			long aStudentId = in.nextLong();
 			Student aStudent = getStudent(aStudentId);
 		}
 
 
 		if(Debug._2ND_TEST_ENABLE) {
-			System.out.println("=== ²âÊÔ¶ş¡¾ÊäÈëÑ§ÉúËùÔÚµÄ°à¼¶£¬¿ÆÄ¿£¬µÃ³ö¸Ã¿ÆÄ¿²»¼°¸ñµÄËùÓĞÑ§Éú£¬°´ÕÕÑ§ÉúµÄ¿ÆÄ¿³É¼¨½øĞĞÅÅĞò¡¿ ===");
-			System.out.println("ÇëÊäÈë´ı²éÕÒµÄ°à¼¶Ãû³Æ£¬¿ÆÄ¿Ãû³Æ£º");
+			System.out.println("=== æµ‹è¯•äºŒã€è¾“å…¥å­¦ç”Ÿæ‰€åœ¨çš„ç­çº§ï¼Œç§‘ç›®ï¼Œå¾—å‡ºè¯¥ç§‘ç›®ä¸åŠæ ¼çš„æ‰€æœ‰å­¦ç”Ÿï¼ŒæŒ‰ç…§å­¦ç”Ÿçš„ç§‘ç›®æˆç»©è¿›è¡Œæ’åºã€‘ ===");
+			System.out.println("è¯·è¾“å…¥å¾…æŸ¥æ‰¾çš„ç­çº§åç§°ï¼Œç§‘ç›®åç§°ï¼š");
 			String aSchoolClassName = in.next();
 			String aSubejectName = in.next();
 			findAllFailStudents(aSchoolClassName, aSubejectName);
 		}
 
 		if(Debug._3RD_TEST_ENABLE) {
-			System.out.println("==== ²âÊÔÈı¡¾ÊäÈëÑ§ÉúËùÔÚµÄ°à¼¶£¬µÃ³öËùÓĞÑ§ÉúµÄĞÅÏ¢£¬°´ÕÕÑ§ÉúµÄ³öÉúÄêÔÂ¡¢Ñ§Éú±àºÅ½øĞĞÅÅĞò¡¿ ====");
-			System.out.println("ÇëÊäÈë´ı²éÕÒµÄ°à¼¶Ãû³Æ£º");
+			System.out.println("==== æµ‹è¯•ä¸‰ã€è¾“å…¥å­¦ç”Ÿæ‰€åœ¨çš„ç­çº§ï¼Œå¾—å‡ºæ‰€æœ‰å­¦ç”Ÿçš„ä¿¡æ¯ï¼ŒæŒ‰ç…§å­¦ç”Ÿçš„å‡ºç”Ÿå¹´æœˆã€å­¦ç”Ÿç¼–å·è¿›è¡Œæ’åºã€‘ ====");
+			System.out.println("è¯·è¾“å…¥å¾…æŸ¥æ‰¾çš„ç­çº§åç§°ï¼š");
 			String aSchoolClassName = in.next();
 			findAllStudent(aSchoolClassName);
 		}
 		
 		if(Debug._4TH_TEST_ENABLE) {
-			System.out.println("===================== ²âÊÔËÄ¡¾ÕÒ³öËùÓĞ°à¼¶ÖĞ£¬µ¥¿ÆÅÅÃûµÚÒ»µÄÑ§Éú¡¿ =====================");
+			System.out.println("===================== æµ‹è¯•å››ã€æ‰¾å‡ºæ‰€æœ‰ç­çº§ä¸­ï¼Œå•ç§‘æ’åç¬¬ä¸€çš„å­¦ç”Ÿã€‘ =====================");
 			findTopSubjectStudents();
 		}
 		
 		if(Debug._5TH_TEST_ENABLE) {
-			System.out.println("============= ²âÊÔÎå¡¾ÕÒ³öËùÓĞ°à¼¶ÖĞ£¬Ã¿¸ö¿ÆÄ¿µÄ°à¼¶Æ½¾ù·Ö×î¸ßµÄÈÎ¿ÎÀÏÊ¦µÄĞÅÏ¢¡¿ =============");
+			System.out.println("============= æµ‹è¯•äº”ã€æ‰¾å‡ºæ‰€æœ‰ç­çº§ä¸­ï¼Œæ¯ä¸ªç§‘ç›®çš„ç­çº§å¹³å‡åˆ†æœ€é«˜çš„ä»»è¯¾è€å¸ˆçš„ä¿¡æ¯ã€‘ =============");
 			findSubjectBestTeacher();
 		}
 		

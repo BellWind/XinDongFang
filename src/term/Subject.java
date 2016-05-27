@@ -17,22 +17,22 @@ public class Subject {
 		Subject aSubject = new Subject();
 		
 		if(Debug.TIP_ENABLE)
-			System.out.println("ÇëÊäÈë¸Ã¿Î³ÌÃû³Æ£º");
+			System.out.println("è¯·è¾“å…¥è¯¥è¯¾ç¨‹åç§°ï¼š");
 		String aName = Main.in.next();
 		aSubject.setName(aName);
 		
 		if(Debug.TIP_ENABLE)
-			System.out.println("ÇëÊäÈë¸Ã¿Î³Ì·ÖÊı£º");
+			System.out.println("è¯·è¾“å…¥è¯¥è¯¾ç¨‹åˆ†æ•°ï¼š");
 		int aScore = Main.in.nextInt();
 		aSubject.setScore(aScore);
 		
 		if(Debug.TIP_ENABLE)
-			System.out.println("ÇëÊäÈë¸Ã¿Î³ÌÀÏÊ¦ĞÅÏ¢£º");
+			System.out.println("è¯·è¾“å…¥è¯¥è¯¾ç¨‹è€å¸ˆä¿¡æ¯ï¼š");
 		Teacher aTeacher = Teacher.initTeacher();
 		aSubject.setTeacher(aTeacher);
 		
 		if(Debug.TIP_ENABLE)
-			System.out.println("¸Ã¿Î³ÌĞÅÏ¢ÒÑÂ¼ÈëÍê±Ï£¡");
+			System.out.println("è¯¥è¯¾ç¨‹ä¿¡æ¯å·²å½•å…¥å®Œæ¯•ï¼");
 		
 		return aSubject;
 	}
