@@ -11,31 +11,6 @@ public class Subject {
 	public Subject(String name) {
 		this.name = name;
 	}
-
-	public static Subject initSubject() {
-		
-		Subject aSubject = new Subject();
-		
-		if(Debug.TIP_ENABLE)
-			System.out.println("请输入该课程名称：");
-		String aName = Main.in.next();
-		aSubject.setName(aName);
-		
-		if(Debug.TIP_ENABLE)
-			System.out.println("请输入该课程分数：");
-		int aScore = Main.in.nextInt();
-		aSubject.setScore(aScore);
-		
-		if(Debug.TIP_ENABLE)
-			System.out.println("请输入该课程老师信息：");
-		Teacher aTeacher = Teacher.initTeacher();
-		aSubject.setTeacher(aTeacher);
-		
-		if(Debug.TIP_ENABLE)
-			System.out.println("该课程信息已录入完毕！");
-		
-		return aSubject;
-	}
 	
 	public String getName() {
 		return name;

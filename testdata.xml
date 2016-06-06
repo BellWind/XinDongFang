@@ -1,0 +1,208 @@
+﻿<?xml version = "1.0" encoding = "UTF-8"?>
+
+<school>
+	<class id = "001">
+		<name>一班</name>
+		<student id = "001">
+			<name>玛丽</name>
+			<sex>女</sex>
+			<age>20</age>
+			<studentId>20130101</studentId>
+			<birthday>
+				<year>1995</year>
+				<month>10</month>
+				<day>01</day>
+			</birthday>
+			<subject id = "001">
+				<name>语文</name>
+				<score>100</score>
+				<teacher>
+					<name>托尼</name>
+					<teacherId>8080</teacherId>
+				</teacher>
+			</subject>
+			<subject id = "002">
+				<name>数学</name>
+				<score>100</score>
+				<teacher>
+					<name>范西</name>
+					<teacherId>8081</teacherId>
+				</teacher>
+			</subject>
+		</student>
+		<student id = "002">
+			<name>小明</name>
+			<sex>男</sex>
+			<age>20</age>
+			<studentId>20130102</studentId>
+			<birthday>
+				<year>1995</year>
+				<month>02</month>
+				<day>01</day>
+			</birthday>
+			<subject id = "001">
+				<name>语文</name>
+				<score>90</score>
+				<teacher>
+					<name>托尼</name>
+					<teacherId>8080</teacherId>
+				</teacher>
+			</subject>
+			<subject id = "002">
+				<name>数学</name>
+				<score>20</score>
+				<teacher>
+					<name>范西</name>
+					<teacherId>8081</teacherId>
+				</teacher>
+			</subject>
+		</student>
+		<student id = "003">
+			<name>爱丽</name>
+			<sex>女</sex>
+			<age>20</age>
+			<studentId>20130103</studentId>
+			<birthday>
+				<year>1995</year>
+				<month>03</month>
+				<day>01</day>
+			</birthday>
+			<subject id = "001">
+				<name>语文</name>
+				<score>70</score>
+				<teacher>
+					<name>托尼</name>
+					<teacherId>8080</teacherId>
+				</teacher>
+			</subject>
+			<subject>
+				<name>数学</name>
+				<score>30</score>
+				<teacher>
+					<name>范西</name>
+					<teacherId>8081</teacherId>
+				</teacher>
+			</subject>
+		</student>
+		<student id = "004">
+			<name>小红</name>
+			<sex>女</sex>
+			<age>20</age>
+			<studentId>20130104</studentId>
+			<birthday>
+				<year>1995</year>
+				<month>04</month>
+				<day>01</day>
+			</birthday>
+			<subject id = "001">
+				<name>语文</name>
+				<score>88</score>
+				<teacher>
+					<name>托尼</name>
+					<teacherId>8080</teacherId>
+				</teacher>
+			</subject>
+			<subject id = "002">
+				<name>数学</name>
+				<score>92</score>
+				<teacher>
+					<name>范西</name>
+					<teacherId>8081</teacherId>
+				</teacher>
+			</subject>
+		</student>			
+		<student id = "005">
+			<name>拉里</name>
+			<sex>男</sex>
+			<age>20</age>
+			<studentId>20130105</studentId>
+			<birthday>
+				<year>1995</year>
+				<month>05</month>
+				<day>01</day>
+			</birthday>
+			<subject id = "001">
+				<name>语文</name>
+				<score>76</score>
+				<teacher>
+					<name>托尼</name>
+					<teacherId>8080</teacherId>
+				</teacher>
+			</subject>
+			<subject id = "002">
+				<name>数学</name>
+				<score>34</score>
+				<teacher>
+					<name>范西</name>
+					<teacherId>8081</teacherId>
+				</teacher>
+			</subject>
+		</student>				
+	</class>
+		
+	<class id = "002">
+		<name>二班</name>
+		<student id = "001">
+			<name>莉莉</name>
+			<sex>女</sex>
+			<age>20</age>
+			<studentId>20130201</studentId>
+			<birthday>
+				<year>1995</year>
+				<month>04</month>
+				<day>01</day>
+			</birthday>
+			<subject id = "001">
+				<name>语文</name>
+				<score>98</score>
+				<teacher>
+					<name>露西</name>
+					<teacherId>8082</teacherId>
+				</teacher>
+			</subject>
+			<subject>
+				<name>数学</name>
+				<score>92</score>
+				<teacher>
+					<name>加里</name>
+					<teacherId>8083</teacherId>
+				</teacher>
+			</subject>
+		</student>
+		<student id = "002">
+			<name>欢欢</name>
+			<sex>女</sex>
+			<age>20</age>
+			<studentId>20130202</studentId>
+			<birthday>
+				<year>1995</year>
+				<month>04</month>
+				<day>01</day>
+			</birthday>
+			<subject id = "001">
+				<name>语文</name>
+				<score>77</score>
+				<teacher>
+					<name>露西</name>
+					<teacherId>8082</teacherId>
+				</teacher>
+			</subject>
+			<subject id = "002">
+				<name>数学</name>
+				<score>88</score>
+				<teacher>
+					<name>加里</name>
+					<teacherId>8081</teacherId>
+				</teacher>
+			</subject>
+			<subject id = "003">
+				<name>英语</name>
+				<score>97</score>
+				<teacher>
+					<name>鹏鹏</name>
+					<teacherId>8084</teacherId>
+				</teacher>
+			</subject>
+		</student>
+	</class>
+</school>

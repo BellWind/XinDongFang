@@ -8,28 +8,6 @@ public class Teacher {
 	
 	public Teacher() {}
 	
-	public static Teacher initTeacher() {
-		
-		Teacher aTeacher = new Teacher();
-		
-		if(Debug.TIP_ENABLE)
-			System.out.println("请输入该老师姓名：");
-		String aName = Main.in.next();
-		aTeacher.setName(aName);
-		
-		if(Debug.TIP_ENABLE)
-			System.out.println("请输入该老师工号：");
-		long aTeacherId = Main.in.nextLong();
-		aTeacher.setTeacherId(aTeacherId);
-		
-		if(Debug.TIP_ENABLE)
-			System.out.println("该老师信息已录入完毕！");
-		
-		aTeacher.averageScore = 0;
-		
-		return aTeacher;
-	}
-	
 	public String getName() {
 		return name;
 	}

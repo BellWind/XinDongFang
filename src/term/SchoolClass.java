@@ -17,40 +17,13 @@ public class SchoolClass {
 		this.subjectSet = subjectSet;
 	}
 	
-	public static SchoolClass initSchoolClass() {
-		
-		SchoolClass aSchoolClass = new SchoolClass();
-		
-		if(Debug.TIP_ENABLE)
-			System.out.println("请输入班级名称：");
-		String aName = Main.in.next();
-		aSchoolClass.setName(aName);
-		
-		if(Debug.TIP_ENABLE)
-			System.out.println("请输入班级学生总数量：");
-		int classTotalStudentNumber = Main.in.nextInt();
-		
-		for(int i = 0; i < classTotalStudentNumber; i++) {
-			if(Debug.TIP_ENABLE)
-				System.out.print((i+1)+" ");
-			Student student = Student.initStudent();
-			aSchoolClass.addStudent(student);
-		}
-		
-		for(Student aStudent : aSchoolClass.studentSet) {
-			Set<Subject> aSubjectSet = aStudent.getSubjectSet();
-			for(Subject aSubject : aSubjectSet) {
-				aSchoolClass.addSubject(aSubject);
-			}
-		}
-		
-		
-		for(Subject aSubject : aSchoolClass.subjectSet) {
+	public void initSubjectTeacherMap() {
+		for(Subject aSubject : subjectSet) {
 			String aSubjectName = aSubject.getName();
 			Teacher classSubjectTeacher = null;
 			int totalScore = 0;
 			int totalStudent = 0;
-			for(Student aStudent : aSchoolClass.studentSet) {
+			for(Student aStudent : studentSet) {
 				int score = aStudent.getSubjectScore(aSubjectName);
 				if(score >= 0) {
 					totalScore += score;
@@ -61,18 +34,17 @@ public class SchoolClass {
 				}
 			}
 			classSubjectTeacher.setAverageScore((double)totalScore / (double)totalStudent);
-			aSchoolClass.subjectTeacherMap.put(aSubject, classSubjectTeacher);
+			subjectTeacherMap.put(aSubject, classSubjectTeacher);
 		}
-		
-		if(Debug.TIP_ENABLE)
-			System.out.println("该班级信息已录入完毕！");
-		
-		return aSchoolClass;
 	}
 
 	public void addStudent(Student... students) {
-		for(Student aStudent : students)
+		for(Student aStudent : students) {
 			studentSet.add(aStudent);
+			Set<Subject> subjectSet = aStudent.getSubjectSet();
+			for(Subject aSubject : subjectSet)
+				addSubject(aSubject);
+		}
 	}
 	
 	public void addSubject(Subject... subjects) {
@@ -125,10 +97,8 @@ public class SchoolClass {
 				findSubject = true;
 			}
 		}
-		if(!findSubject) {
-			System.out.println("请输入该班级存在的课程！");
+		if(!findSubject) 
 			return null;
-		}
 		
 		Set<Student> failStudentSet = new TreeSet<Student>(new Comparator<Student>() {
 			public int compare(Student student1, Student student2) {
@@ -198,6 +168,31 @@ public class SchoolClass {
 			System.out.println("其hash值为："+aSubject.hashCode());
 			cnt++;
 		}
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		SchoolClass other = (SchoolClass) obj;
+		if (name == null) {
+			if (other.name != null)
+				return false;
+		} else if (!name.equals(other.name))
+			return false;
+		return true;
 	}
 	
 }
